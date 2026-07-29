@@ -1230,3 +1230,63 @@ Please make sure your database server is running at `localhost:5432`.
     at listenInCluster (node:net:1994:12)
     at Server.listen (node:net:2099:7)
     at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:07:33 [[31merror[39m]: PrismaClientKnownRequestError: 
+[31mInvalid [1m`prisma.property.findMany()`[22m invocation in[39m
+[4mD:\Capritech Global Services\HomeVistaa\backend\src\repositories\property.repository.ts:194:38[24m
+
+  [2m[90m191[39m [34m}[39m[22m
+  [2m[90m192[39m [22m
+  [2m[90m193[39m [36mexport[39m [36masync[39m [36mfunction[39m [36mgetFeaturedProperties[39m[34m([39mlimit ,[object Object], ,[object Object][34m)[39m [34m{[39m[22m
+[1m[31m→[39m[22m [2m[90m194[39m   [36mconst[39m rows = [36mawait[39m prisma[34m.[39mproperty[34m.[39m[36mfindMany[39m[34m([39m[22m
+The table `public.properties` does not exist in the current database.
+    at $n.handleRequestError (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async Object.getFeaturedProperties (D:\Capritech Global Services\HomeVistaa\backend\src\repositories\property.repository.ts:194:16)
+    at async getFeaturedProperties (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\properties.controller.ts:32:24)
+13:07:51 [[31merror[39m]: PrismaClientKnownRequestError: 
+[31mInvalid [1m`prisma.property.findMany()`[22m invocation in[39m
+[4mD:\Capritech Global Services\HomeVistaa\backend\src\repositories\property.repository.ts:194:38[24m
+
+  [2m[90m191[39m [34m}[39m[22m
+  [2m[90m192[39m [22m
+  [2m[90m193[39m [36mexport[39m [36masync[39m [36mfunction[39m [36mgetFeaturedProperties[39m[34m([39mlimit ,[object Object], ,[object Object][34m)[39m [34m{[39m[22m
+[1m[31m→[39m[22m [2m[90m194[39m   [36mconst[39m rows = [36mawait[39m prisma[34m.[39mproperty[34m.[39m[36mfindMany[39m[34m([39m[22m
+The table `public.properties` does not exist in the current database.
+    at $n.handleRequestError (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async Object.getFeaturedProperties (D:\Capritech Global Services\HomeVistaa\backend\src\repositories\property.repository.ts:194:16)
+    at async getFeaturedProperties (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\properties.controller.ts:32:24)
+13:07:56 [[31merror[39m]: PrismaClientKnownRequestError: 
+[31mInvalid [1m`prisma.user.findUnique()`[22m invocation in[39m
+[4mD:\Capritech Global Services\HomeVistaa\backend\src\repositories\user.repository.ts:47:22[24m
+
+  [2m[90m44[39m [34m}[39m[22m
+  [2m[90m45[39m [22m
+  [2m[90m46[39m [36mexport[39m [36masync[39m [36mfunction[39m [36mfindUserByEmail[39m[34m([39memail,[object Object], string[34m)[39m[34m:[39m Promise<User | [36mnull[39m> [34m{[39m[22m
+[1m[31m→[39m[22m [2m[90m47[39m   [36mreturn[39m prisma[34m.[39muser[34m.[39m[36mfindUnique[39m[34m([39m[22m
+The table `public.users` does not exist in the current database.
+    at $n.handleRequestError (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async Object.login (D:\Capritech Global Services\HomeVistaa\backend\src\services\auth.service.ts:81:16)
+    at async login (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\auth.controller.ts:32:49)
+13:08:00 [[31merror[39m]: PrismaClientKnownRequestError: 
+[31mInvalid [1m`prisma.user.findUnique()`[22m invocation in[39m
+[4mD:\Capritech Global Services\HomeVistaa\backend\src\repositories\user.repository.ts:47:22[24m
+
+  [2m[90m44[39m [34m}[39m[22m
+  [2m[90m45[39m [22m
+  [2m[90m46[39m [36mexport[39m [36masync[39m [36mfunction[39m [36mfindUserByEmail[39m[34m([39memail,[object Object], string[34m)[39m[34m:[39m Promise<User | [36mnull[39m> [34m{[39m[22m
+[1m[31m→[39m[22m [2m[90m47[39m   [36mreturn[39m prisma[34m.[39muser[34m.[39m[36mfindUnique[39m[34m([39m[22m
+The table `public.users` does not exist in the current database.
+    at $n.handleRequestError (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:7315)
+    at $n.handleAndLogRequestError (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at async l (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at async Object.login (D:\Capritech Global Services\HomeVistaa\backend\src\services\auth.service.ts:81:16)
+    at async login (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\auth.controller.ts:32:49)

@@ -36,7 +36,9 @@ app.use(cors({
 }));
 
 // ─── General Middleware ────────────────────────────────────────────────────────
-app.use(compression());
+if (env.isProd) {
+  app.use(compression());
+}
 app.use(cookieParser());
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
