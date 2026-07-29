@@ -1,0 +1,1073 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Enums ────────────────────────────────────────────────────────────────────
+
+enum UserRole {
+  user
+  admin
+  super_admin
+  sales_manager
+  builder
+  customer
+}
+
+enum PropertyType {
+  apartment
+  villa
+  plot
+  commercial
+}
+
+enum CommercialType {
+  office
+  retail
+  warehouse
+}
+
+enum PossessionStatus {
+  ready
+  under_construction
+}
+
+enum ListingType {
+  sell
+  rent
+}
+
+enum ListingRole {
+  owner
+  agent
+}
+
+enum ListingStatus {
+  pending
+  approved
+  rejected
+  draft
+  sold
+  rented
+  expired
+  paused
+}
+
+enum InquiryType {
+  general
+  visit
+  brochure
+  callback
+  advisor
+}
+
+enum ServiceType {
+  agreement
+  verification
+  management
+}
+
+enum ProfessionalRole {
+  agent
+  developer
+}
+
+enum ProfessionalStatus {
+  pending
+  approved
+  rejected
+}
+
+enum BlogCategory {
+  legal
+  finance
+  investment
+  design
+}
+
+enum RoomType {
+  kitchen
+  bedroom
+  living
+}
+
+enum LoanStatus {
+  pending
+  processing
+  approved
+  rejected
+}
+
+// ─── User ─────────────────────────────────────────────────────────────────────
+
+model User {
+  id                  String   @id @default(uuid())
+  name                String
+  email               String   @unique
+  passwordHash        String   @map("password_hash")
+  role                UserRole @default(user)
+  emailVerified       Boolean  @default(false) @map("email_verified")
+  avatarUrl           String?  @map("avatar_url")
+  phone               String?
+  dob                 DateTime?
+  city                String?
+  pinCode             String?  @map("pin_code")
+  preferredLanguages  String[] @map("preferred_languages")
+  propertyPreferences Json?    @map("property_preferences")
+  employmentDetails   Json?    @map("employment_details")
+  accountType         String?  @map("account_type")
+  addressDetails      Json?    @map("address_details")
+  securitySettings    Json?    @map("security_settings")
+  notificationPrefs   Json?    @map("notification_prefs")
+  documents           Json?    @map("documents")
+  referralCode        String?  @unique @map("referral_code") // Added for Refer & Earn
+  createdAt           DateTime @default(now()) @map("created_at")
+  updatedAt           DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  refreshTokens    RefreshToken[]
+  listings         Listing[]
+  favorites        Favorite[]
+  savedAlerts      SavedAlert[]
+  inquiries        Inquiry[]
+  professional     Professional?
+  uploads          UploadFile[]
+  activityLogs     ActivityLog[]
+  transactions     Transaction[]
+  searchHistories  SearchHistory[]
+  savedSearches    SavedSearch[]
+  searchAlerts     SearchAlert[]
+  listingDrafts    ListingDraft[]
+  membership       Membership?
+  browsingHistories PropertyBrowsingHistory[]
+  userActivities   UserActivity[]
+  
+  // Referrals
+  referralsMade    Referral[] @relation("Referrer")
+  referralsReceived Referral[] @relation("ReferredUser")
+  rewards          Reward[]
+  wallet           Wallet?
+  
+  coupons          Coupon[]
+  loanApplications LoanApplication[]
+  assignedLeads    Lead[]          @relation("AssignedLeads")
+  notifications    Notification[]
+
+  @@map("users")
+}
+
+// ─── RBAC Roles & Permissions ───────────────────────────────────────────────
+
+model Role {
+  id          String           @id @default(uuid())
+  name        String           @unique
+  description String?          @db.Text
+  permissions RolePermission[]
+  createdAt   DateTime         @default(now()) @map("created_at")
+  updatedAt   DateTime         @updatedAt @map("updated_at")
+
+  @@map("roles")
+}
+
+model Permission {
+  id          String           @id @default(uuid())
+  code        String           @unique
+  description String?
+  module      String?
+  roles       RolePermission[]
+  createdAt   DateTime         @default(now()) @map("created_at")
+
+  @@map("permissions")
+}
+
+model RolePermission {
+  id           String     @id @default(uuid())
+  roleId       String     @map("role_id")
+  permissionId String     @map("permission_id")
+  createdAt    DateTime   @default(now()) @map("created_at")
+
+  role       Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@unique([roleId, permissionId])
+  @@map("role_permissions")
+}
+
+// ─── Auth ─────────────────────────────────────────────────────────────────────
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  tokenHash String   @unique @map("token_hash")
+  expiresAt DateTime @map("expires_at")
+  rememberMe Boolean @default(false) @map("remember_me")
+  device    String?
+  browser   String?
+  ipAddress String?  @map("ip_address")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("refresh_tokens")
+}
+
+model PasswordResetToken {
+  id        String   @id @default(uuid())
+  email     String
+  tokenHash String   @unique @map("token_hash")
+  expiresAt DateTime @map("expires_at")
+  used      Boolean  @default(false)
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([email])
+  @@map("password_reset_tokens")
+}
+
+// ─── Builder ──────────────────────────────────────────────────────────────────
+
+model Builder {
+  id            String @id @default(uuid())
+  name          String @unique
+  logo          String // 2-letter initials or URL
+  rating        Float  @default(4.0)
+  experience    Int    @default(1) // years
+  projectsCount Int    @default(0) @map("projects_count")
+  description   String @db.Text
+
+  properties    Property[]
+  transactions  Transaction[]
+
+  @@map("builders")
+}
+
+// ─── Property ─────────────────────────────────────────────────────────────────
+
+model Property {
+  id               String           @id @default(uuid())
+  title            String
+  description      String           @db.Text
+  price            BigInt           // in INR paise or raw INR
+  priceFormatted   String           @map("price_formatted")
+  location         String
+  locality         String
+  city             String
+  type             PropertyType
+  commercialType   CommercialType?  @map("commercial_type")
+  beds             Int?
+  baths            Int?
+  area             Int              // sq ft
+  pricePerSqFt     Int              @map("price_per_sqft")
+  possessionDate   String           @map("possession_date")
+  possessionStatus PossessionStatus @map("possession_status")
+  reraId           String?          @map("rera_id")
+  featured         Boolean          @default(false)
+  rating           Float            @default(4.0)
+  verified         Boolean          @default(false)
+  builderId        String           @map("builder_id")
+  createdAt        DateTime         @default(now()) @map("created_at")
+  updatedAt        DateTime         @updatedAt @map("updated_at")
+
+  // Relations
+  builder         Builder          @relation(fields: [builderId], references: [id])
+  images          PropertyImage[]
+  amenities       PropertyAmenity[]
+  floorPlans      FloorPlan[]
+  distanceHubs    DistanceHub[]
+  favorites       Favorite[]
+  inquiries       Inquiry[]
+  transactions    Transaction[]
+  browsingHistories PropertyBrowsingHistory[]
+  loanApplications  LoanApplication[]
+
+  @@index([city])
+  @@index([type])
+  @@index([possessionStatus])
+  @@index([price])
+  @@index([featured])
+  @@map("properties")
+}
+
+model PropertyImage {
+  id         String   @id @default(uuid())
+  propertyId String   @map("property_id")
+  url        String
+  isPrimary  Boolean  @default(false) @map("is_primary")
+  sortOrder  Int      @default(0) @map("sort_order")
+
+  property Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+
+  @@index([propertyId])
+  @@map("property_images")
+}
+
+model PropertyAmenity {
+  id         String @id @default(uuid())
+  propertyId String @map("property_id")
+  amenity    String
+
+  property Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+
+  @@index([propertyId])
+  @@map("property_amenities")
+}
+
+model FloorPlan {
+  id         String @id @default(uuid())
+  propertyId String @map("property_id")
+  name       String
+  beds       Int
+  baths      Int
+  area       Int    // sq ft
+  price      BigInt
+  image      String
+
+  property Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+
+  @@index([propertyId])
+  @@map("floor_plans")
+}
+
+model DistanceHub {
+  id         String @id @default(uuid())
+  propertyId String @map("property_id")
+  place      String
+  distance   String // e.g. "1.2 km"
+
+  property Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+
+  @@index([propertyId])
+  @@map("distance_hubs")
+}
+
+// ─── User Listing (Wizard Submissions) ───────────────────────────────────────
+
+model Listing {
+  id               String           @id @default(uuid())
+  userId           String           @map("user_id")
+  title            String
+  type             PropertyType
+  listingType      ListingType      @map("listing_type")
+  role             ListingRole
+  price            BigInt
+  area             Int
+  locality         String
+  city             String
+  address          String
+  zipcode          String
+  beds             Int?
+  baths            Int?
+  possessionStatus PossessionStatus @map("possession_status")
+  possessionDate   String?          @map("possession_date")
+  reraId           String?          @map("rera_id")
+  ownerName        String           @map("owner_name")
+  ownerPhone       String           @map("owner_phone")
+  status           ListingStatus    @default(pending)
+  adminNote        String?          @map("admin_note")
+  amenities        Json?            @map("amenities")
+  media            Json?            @map("media")
+  details          Json?            @map("details")
+  seo              Json?            @map("seo")
+  expiryDate       DateTime?        @map("expiry_date")
+  analytics        Json?            @map("analytics")
+  createdAt        DateTime         @default(now()) @map("created_at")
+  updatedAt        DateTime         @updatedAt @map("updated_at")
+
+  user   User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  images ListingImage[]
+  leads  Lead[]
+  listingMedia     ListingMedia[]
+  listingDocuments ListingDocument[]
+
+  @@index([userId])
+  @@index([status])
+  @@index([city])
+  @@map("listings")
+}
+
+model Lead {
+  id            String   @id @default(uuid())
+  listingId     String   @map("listing_id")
+  customerName  String   @map("customer_name")
+  contactNumber String   @map("contact_number")
+  email         String?
+  enquiryDate   DateTime @default(now()) @map("enquiry_date")
+  status        String   @default("New") // New, Contacted, Site Visit, Booking, Loan Assistance, Closed
+  assignedToId  String?  @map("assigned_to_id")
+  notes         String?  @db.Text
+  
+  listing       Listing  @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  assignedTo    User?    @relation("AssignedLeads", fields: [assignedToId], references: [id], onDelete: SetNull)
+  histories     LeadHistory[]
+
+  @@index([listingId])
+  @@index([assignedToId])
+  @@map("leads")
+}
+
+model LeadHistory {
+  id          String   @id @default(uuid())
+  leadId      String   @map("lead_id")
+  oldStatus   String?  @map("old_status")
+  newStatus   String   @map("new_status")
+  remarks     String?  @db.Text
+  updatedBy   String?  @map("updated_by")
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  lead Lead @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  @@index([leadId])
+  @@map("lead_histories")
+}
+
+model ListingMedia {
+  id           String   @id @default(uuid())
+  listingId    String   @map("listing_id")
+  mediaType    String   @map("media_type") // image, video, floor_plan, virtual_tour
+  url          String
+  isPrimary    Boolean  @default(false) @map("is_primary")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  listing      Listing  @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
+  @@index([listingId])
+  @@map("listing_media")
+}
+
+model ListingDocument {
+  id             String   @id @default(uuid())
+  listingId      String   @map("listing_id")
+  documentType   String   @map("document_type") // rera, tax, deed, occupancy
+  url            String
+  verified       Boolean  @default(false)
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  listing        Listing  @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
+  @@index([listingId])
+  @@map("listing_documents")
+}
+
+model ListingImage {
+  id        String @id @default(uuid())
+  listingId String @map("listing_id")
+  url       String
+
+  listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
+  @@index([listingId])
+  @@map("listing_images")
+}
+
+// ─── Favorites ────────────────────────────────────────────────────────────────
+
+model Favorite {
+  id         String   @id @default(uuid())
+  userId     String   @map("user_id")
+  propertyId String   @map("property_id")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  property Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, propertyId])
+  @@index([userId])
+  @@map("favorites")
+}
+
+// ─── Saved Alerts ─────────────────────────────────────────────────────────────
+
+model SavedAlert {
+  id          String   @id @default(uuid())
+  userId      String   @map("user_id")
+  title       String
+  description String
+  filtersJson Json     @map("filters_json") // stores FilterState JSON
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("saved_alerts")
+}
+
+// ─── Inquiries ────────────────────────────────────────────────────────────────
+
+model Inquiry {
+  id             String      @id @default(uuid())
+  name           String
+  email          String
+  phone          String
+  message        String      @db.Text
+  inquiryType    InquiryType @default(general) @map("inquiry_type")
+  propertyId     String?     @map("property_id")
+  propertyName   String?     @map("property_name")
+  datePreference String?     @map("date_preference")
+  userId         String?     @map("user_id")
+  isRead         Boolean     @default(false) @map("is_read")
+  createdAt      DateTime    @default(now()) @map("created_at")
+
+  property Property? @relation(fields: [propertyId], references: [id], onDelete: SetNull)
+  user     User?     @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([propertyId])
+  @@index([inquiryType])
+  @@index([createdAt])
+  @@map("inquiries")
+}
+
+// ─── Service Requests ─────────────────────────────────────────────────────────
+
+model ServiceRequest {
+  id          String      @id @default(uuid())
+  name        String
+  email       String
+  phone       String
+  address     String?
+  details     String?     @db.Text
+  serviceType ServiceType @map("service_type")
+  isRead      Boolean     @default(false) @map("is_read")
+  createdAt   DateTime    @default(now()) @map("created_at")
+
+  @@index([serviceType])
+  @@index([createdAt])
+  @@map("service_requests")
+}
+
+// ─── Professionals ────────────────────────────────────────────────────────────
+
+model Professional {
+  id         String             @id @default(uuid())
+  userId     String?            @unique @map("user_id")
+  name       String
+  email      String             @unique
+  phone      String
+  company    String
+  reraId     String?            @map("rera_id")
+  experience Int                @default(1) // years
+  role       ProfessionalRole
+  status     ProfessionalStatus @default(pending)
+  adminNote  String?            @map("admin_note")
+  createdAt  DateTime           @default(now()) @map("created_at")
+  updatedAt  DateTime           @updatedAt @map("updated_at")
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([role])
+  @@index([status])
+  @@map("professionals")
+}
+
+// ─── Blogs ────────────────────────────────────────────────────────────────────
+
+model Blog {
+  id          String       @id @default(uuid())
+  category    BlogCategory
+  title       String
+  description String       @db.Text
+  author      String
+  readTime    String       @map("read_time")
+  image       String
+  published   Boolean      @default(true)
+  publishedAt DateTime     @default(now()) @map("published_at")
+  createdAt   DateTime     @default(now()) @map("created_at")
+  updatedAt   DateTime     @updatedAt @map("updated_at")
+
+  @@index([category])
+  @@index([published])
+  @@map("blogs")
+}
+
+// ─── Interior Designs ─────────────────────────────────────────────────────────
+
+model InteriorDesign {
+  id          String   @id @default(uuid())
+  roomType    RoomType @map("room_type")
+  title       String
+  description String   @db.Text
+  image       String
+  specsJson   Json     @map("specs_json") // string[]
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@index([roomType])
+  @@map("interior_designs")
+}
+
+// ─── File Uploads ─────────────────────────────────────────────────────────────
+
+model UploadFile {
+  id           String   @id @default(uuid())
+  userId       String?  @map("user_id")
+  filename     String   // stored filename on disk
+  originalName String   @map("original_name")
+  mimeType     String   @map("mime_type")
+  size         Int      // bytes
+  url          String   // public URL path
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@map("upload_files")
+}
+
+// ─── Activity Logs ────────────────────────────────────────────────────────────
+
+model ActivityLog {
+  id         String   @id @default(uuid())
+  userId     String?  @map("user_id")
+  action     String   // e.g. "created_listing", "deleted_alert"
+  entityType String?  @map("entity_type") // "listing" | "property" | etc.
+  entityId   String?  @map("entity_id")
+  metadata   Json?    // extra context
+  ipAddress  String?  @map("ip_address")
+  browser    String?
+  device     String?
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([entityType, entityId])
+  @@index([createdAt])
+  @@map("activity_logs")
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  title     String
+  message   String   @db.Text
+  type      String
+  isRead    Boolean  @default(false) @map("is_read")
+  metadata  Json?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, isRead])
+  @@map("notifications")
+}
+
+enum TransactionType {
+  booking
+  purchase
+  token
+  rent
+  emi
+}
+
+enum PaymentStatus {
+  pending
+  processing
+  completed
+  failed
+  cancelled
+  refunded
+}
+
+enum BookingStatus {
+  pending
+  approved
+  rejected
+}
+
+model Transaction {
+  id               String          @id @default(uuid())
+  userId           String          @map("user_id")
+  propertyId       String          @map("property_id")
+  builderId        String?         @map("builder_id")
+  propertyName     String          @map("property_name")
+  propertyType     PropertyType    @map("property_type")
+  propertyAddress  String          @map("property_address")
+  city             String
+  sellerName       String          @map("seller_name")
+  transactionType  TransactionType @map("transaction_type")
+  
+  bookingAmount    BigInt?         @map("booking_amount")
+  totalAmount      BigInt?         @map("total_amount")
+  
+  bookingDate      DateTime        @default(now()) @map("booking_date")
+  paymentDate      DateTime        @default(now()) @map("payment_date")
+  registrationDate DateTime?       @map("registration_date")
+  possessionDate   DateTime?       @map("possession_date")
+  
+  amountPaid       BigInt          @map("amount_paid")
+  paymentMethod    String          @map("payment_method")
+  paymentStatus    PaymentStatus   @default(completed) @map("payment_status")
+  bookingStatus    BookingStatus   @default(approved) @map("booking_status")
+  transactionStatus String?        @default("Processing") @map("transaction_status")
+  invoiceNumber    String          @unique @map("invoice_number")
+  createdAt        DateTime        @default(now()) @map("created_at")
+  updatedAt        DateTime        @updatedAt @map("updated_at")
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  property Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  builder  Builder? @relation(fields: [builderId], references: [id], onDelete: SetNull)
+  
+  payments  TransactionPayment[]
+  documents TransactionDocument[]
+  timeline  TransactionTimeline[]
+
+  @@index([userId])
+  @@index([propertyId])
+  @@index([builderId])
+  @@map("transactions")
+}
+
+model TransactionPayment {
+  id             String        @id @default(uuid())
+  transactionId  String        @map("transaction_id")
+  installmentNo  Int           @map("installment_no")
+  amount         BigInt
+  paidDate       DateTime?     @map("paid_date")
+  paymentMode    String?       @map("payment_mode")
+  paymentStatus  PaymentStatus @default(pending) @map("payment_status")
+  receiptUrl     String?       @map("receipt_url")
+  createdAt      DateTime      @default(now()) @map("created_at")
+
+  transaction Transaction @relation(fields: [transactionId], references: [id], onDelete: Cascade)
+
+  @@index([transactionId])
+  @@map("transaction_payments")
+}
+
+model TransactionDocument {
+  id             String   @id @default(uuid())
+  transactionId  String   @map("transaction_id")
+  documentName   String   @map("document_name")
+  documentType   String   @map("document_type") // e.g. receipt, invoice, agreement
+  documentUrl    String   @map("document_url")
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  transaction Transaction @relation(fields: [transactionId], references: [id], onDelete: Cascade)
+
+  @@index([transactionId])
+  @@map("transaction_documents")
+}
+
+model TransactionTimeline {
+  id             String   @id @default(uuid())
+  transactionId  String   @map("transaction_id")
+  title          String
+  description    String?  @db.Text
+  status         String   // e.g. Completed, Pending
+  date           DateTime?
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  transaction Transaction @relation(fields: [transactionId], references: [id], onDelete: Cascade)
+
+  @@index([transactionId])
+  @@map("transaction_timeline")
+}
+
+// ─── Search History ────────────────────────────────────────────────────────────
+
+model SearchHistory {
+  id              String   @id @default(uuid())
+  userId          String   @map("user_id")
+  searchTitle     String   @map("search_title")          // Auto-generated e.g. "2 BHK in Mumbai"
+  keyword         String?                                // Search query text
+  city            String?
+  locality        String?
+  latitude        Float?
+  longitude       Float?
+  propertyType    String?  @map("property_type")         // apartment | villa | plot | commercial | all
+  listingPurpose  String?  @map("listing_purpose")       // buy | rent
+  bhk             Int?
+  minPrice        BigInt?  @map("min_price")
+  maxPrice        BigInt?  @map("max_price")
+  builder         String?
+  possessionStatus String? @map("possession_status")
+  sortBy          String?  @map("sort_by")
+  filtersJson     Json?    @map("filters_json")          // Full filter state as JSON backup
+  resultsCount    Int      @default(0) @map("results_count")
+  searchHash      String   @map("search_hash")           // MD5/hash of criteria for dedup
+  device          String?
+  browser         String?
+  ipAddress       String?  @map("ip_address")
+  createdAt       DateTime @default(now()) @map("created_at")
+  lastSearchedAt  DateTime @default(now()) @map("last_searched_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, searchHash])
+  @@index([userId])
+  @@index([createdAt])
+  @@map("search_history")
+}
+
+model SavedSearch {
+  id                   String   @id @default(uuid())
+  userId               String   @map("user_id")
+  searchName           String   @map("search_name")
+  filtersJson          Json     @map("filters_json")
+  alertEnabled         Boolean  @default(false) @map("alert_enabled")
+  notificationFrequency String   @default("daily") @map("notification_frequency") // daily, weekly, instant
+  createdAt            DateTime @default(now()) @map("created_at")
+  updatedAt            DateTime @updatedAt @map("updated_at")
+
+  user   User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  alerts SearchAlert[]
+
+  @@index([userId])
+  @@map("saved_searches")
+}
+
+model SearchAlert {
+  id               String   @id @default(uuid())
+  userId           String   @map("user_id")
+  savedSearchId    String   @map("saved_search_id")
+  alertType        String   @map("alert_type") // e.g. "new_property", "price_drop"
+  status           String   @default("active") // active, inactive
+  lastNotification DateTime? @map("last_notification")
+  createdAt        DateTime @default(now()) @map("created_at")
+
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  savedSearch SavedSearch @relation(fields: [savedSearchId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([savedSearchId])
+  @@map("search_alerts")
+}
+
+// ─── Listing Drafts ───────────────────────────────────────────────────────────
+
+model ListingDraft {
+  id              String   @id @default(uuid())
+  userId          String   @map("user_id")
+  currentStep     Int      @default(1) @map("current_step")
+  
+  // Step 1: Basic Info
+  listingType     String?  @map("listing_type")          // sale / rent
+  buildingType    String?  @map("building_type")         // residential / commercial
+  propertyType    String?  @map("property_type")         // apartment / villa / plot / builder_floor / penthouse / independent_house
+  city            String?
+  locality        String?
+  price           BigInt?
+  
+  // Step 2: Basic Configuration
+  propertyAge     String?  @map("property_age")
+  coveredParking  String?  @map("covered_parking")
+  openParking     String?  @map("open_parking")
+  balcony         String?  @map("balcony")
+  
+  // Step 3: Media & Highlights
+  imageUrls       Json?    @map("image_urls")            // string[]
+  videoUrls       Json?    @map("video_urls")            // string[]
+  advantages      Json?    @map("advantages")            // string[]
+  flooring        String?
+  towerBlock      String?  @map("tower_block")
+  unitNo          String?  @map("unit_no")
+
+  // JSON form storage for Wizard Step 1-5 (overrides explicit columns for complex states)
+  formData        Json?    @map("form_data")
+
+  // Metadata
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("listing_drafts")
+}
+
+// ─── Memberships & Activity ───────────────────────────────────────────────────
+
+enum MembershipPlan {
+  basic
+  premium
+  elite
+}
+
+enum MembershipStatus {
+  active
+  expired
+  cancelled
+}
+
+model Membership {
+  id            String           @id @default(uuid())
+  userId        String           @unique @map("user_id")
+  planName      String           @map("plan_name")
+  planPrice     Int              @map("plan_price")
+  planType      MembershipPlan   @default(basic) @map("plan_type")
+  status        MembershipStatus @default(active)
+  purchaseDate  DateTime         @default(now()) @map("purchase_date")
+  expiryDate    DateTime         @map("expiry_date")
+  paymentStatus PaymentStatus    @default(completed) @map("payment_status")
+  createdAt     DateTime         @default(now()) @map("created_at")
+  updatedAt     DateTime         @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("memberships")
+}
+
+model PropertyBrowsingHistory {
+  id         String   @id @default(uuid())
+  userId     String   @map("user_id")
+  propertyId String   @map("property_id")
+  visitedAt  DateTime @default(now()) @map("visited_at")
+  ipAddress  String?  @map("ip_address")
+  device     String?
+  browser    String?
+  sessionId  String?  @map("session_id")
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  property Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([propertyId])
+  @@map("property_browsing_history")
+}
+
+model UserActivity {
+  id           String   @id @default(uuid())
+  userId       String   @map("user_id")
+  activityType String   @map("activity_type")
+  referenceId  String?  @map("reference_id")
+  description  String
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("user_activities")
+}
+
+// ─── Referrals & Rewards ────────────────────────────────────────────────────────
+model Referral {
+  id               String   @id @default(uuid())
+  referrerId       String   @map("referrer_id")
+  referredUserId   String?  @map("referred_user_id") // Link when they register
+  referredEmail    String   @map("referred_email")
+  referredPhone    String?  @map("referred_phone")
+  referralCode     String   @map("referral_code")
+  referralLink     String?  @map("referral_link")
+  status           String   @default("invited") // invited, registered, verified, booked, rewarded
+  bookingStatus    String?  @map("booking_status") // none, pending, completed
+  rewardStatus     String   @default("pending") // pending, credited
+  rewardAmount     BigInt?  @map("reward_amount")
+  registrationDate DateTime? @map("registration_date")
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime @updatedAt @map("updated_at")
+
+  referrer     User  @relation("Referrer", fields: [referrerId], references: [id], onDelete: Cascade)
+  referredUser User? @relation("ReferredUser", fields: [referredUserId], references: [id], onDelete: SetNull)
+
+  @@index([referrerId])
+  @@index([referralCode])
+  @@map("referrals")
+}
+
+model Reward {
+  id             String    @id @default(uuid())
+  userId         String    @map("user_id")
+  rewardAmount   BigInt    @map("reward_amount")
+  rewardType     String    @default("cash") // cash, bonus, premium_membership
+  status         String    @default("pending") // pending, credited, redeemed, expired
+  transactionId  String?   @unique @map("transaction_id")
+  creditedDate   DateTime? @map("credited_date")
+  redeemedDate   DateTime? @map("redeemed_date")
+  expiryDate     DateTime? @map("expiry_date")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("rewards")
+}
+
+model Wallet {
+  id               String   @id @default(uuid())
+  userId           String   @unique @map("user_id")
+  totalEarnings    BigInt   @default(0) @map("total_earnings")
+  availableBalance BigInt   @default(0) @map("available_balance")
+  pendingBalance   BigInt   @default(0) @map("pending_balance")
+  redeemedBalance  BigInt   @default(0) @map("redeemed_balance")
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime @updatedAt @map("updated_at")
+
+  user         User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  transactions WalletTransaction[]
+
+  @@map("wallets")
+}
+
+model WalletTransaction {
+  id              String   @id @default(uuid())
+  walletId        String   @map("wallet_id")
+  amount          BigInt
+  transactionType String   // credit, debit
+  description     String
+  referenceId     String?  @map("reference_id") // Can link to a Reward ID or Redemption Request ID
+  createdAt       DateTime @default(now()) @map("created_at")
+
+  wallet Wallet @relation(fields: [walletId], references: [id], onDelete: Cascade)
+
+  @@index([walletId])
+  @@map("wallet_transactions")
+}
+
+model ReferralAnalytics {
+  id                String   @id @default(uuid())
+  userId            String   @unique @map("user_id")
+  linkClicks        Int      @default(0) @map("link_clicks")
+  successfulSignups Int      @default(0) @map("successful_signups")
+  propertyViews     Int      @default(0) @map("property_views")
+  propertyBookings  Int      @default(0) @map("property_bookings")
+  conversionRate    Float    @default(0.0) @map("conversion_rate")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+
+  @@map("referral_analytics")
+}
+
+// ─── Coupons ──────────────────────────────────────────────────────────────────
+model Coupon {
+  id             String   @id @default(uuid())
+  userId         String   @map("user_id")
+  code           String   @unique
+  discountAmount BigInt   @map("discount_amount")
+  discountType   String   @default("flat") // flat, percentage
+  status         String   @default("active") // active, used, expired
+  validUntil     DateTime @map("valid_until")
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("coupons")
+}
+
+// ─── Loan Applications ────────────────────────────────────────────────────────
+
+model LoanApplication {
+  id              String      @id @default(uuid())
+  userId          String      @map("user_id")
+  bankName        String?     @map("bank_name")
+  loanAmount      BigInt      @map("loan_amount")
+  employmentType  String      @map("employment_type") // Salaried, Self-employed
+  monthlyIncome   BigInt      @map("monthly_income")
+  propertyId      String?     @map("property_id")
+  status          LoanStatus  @default(pending)
+  remarks         String?     @db.Text
+  createdAt       DateTime    @default(now()) @map("created_at")
+  updatedAt       DateTime    @updatedAt @map("updated_at")
+
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  property Property? @relation(fields: [propertyId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@map("loan_applications")
+}

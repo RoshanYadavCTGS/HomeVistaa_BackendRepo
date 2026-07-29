@@ -1,0 +1,1232 @@
+17:47:48 [[31merror[39m]: PrismaClientInitializationError: Authentication failed against database server at `localhost`, the provided database credentials for `postgres` are not valid.
+
+Please make sure to provide valid database credentials for the database server at `localhost`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+17:48:33 [[31merror[39m]: PrismaClientInitializationError: Authentication failed against database server at `localhost`, the provided database credentials for `postgres` are not valid.
+
+Please make sure to provide valid database credentials for the database server at `localhost`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+18:02:04 [[31merror[39m]: PrismaClientInitializationError: Authentication failed against database server at `localhost`, the provided database credentials for `postgres` are not valid.
+
+Please make sure to provide valid database credentials for the database server at `localhost`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+18:08:04 [[31merror[39m]: PrismaClientInitializationError: Authentication failed against database server at `localhost`, the provided database credentials for `postgres` are not valid.
+
+Please make sure to provide valid database credentials for the database server at `localhost`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+18:12:21 [[31merror[39m]: PrismaClientInitializationError: Authentication failed against database server at `localhost`, the provided database credentials for `postgres` are not valid.
+
+Please make sure to provide valid database credentials for the database server at `localhost`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+18:32:32 [[31merror[39m]: PrismaClientInitializationError: Authentication failed against database server at `localhost`, the provided database credentials for `PostgreSQL` are not valid.
+
+Please make sure to provide valid database credentials for the database server at `localhost`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+18:33:06 [[31merror[39m]: PrismaClientInitializationError: Authentication failed against database server at `localhost`, the provided database credentials for `PostgreSQL` are not valid.
+
+Please make sure to provide valid database credentials for the database server at `localhost`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+18:34:13 [[31merror[39m]: PrismaClientInitializationError: Authentication failed against database server at `localhost`, the provided database credentials for `postgres` are not valid.
+
+Please make sure to provide valid database credentials for the database server at `localhost`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+19:10:02 [[31merror[39m]: Error: Invalid email or password.
+    at createError (D:\Capritech Global Services\HomeVistaa\backend\src\middleware\error.middleware.ts:13:27)
+    at Object.login (D:\Capritech Global Services\HomeVistaa\backend\src\services\auth.service.ts:40:22)
+    at login (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\auth.controller.ts:28:49)
+19:13:03 [[31merror[39m]: Error: Invalid email or password.
+    at createError (D:\Capritech Global Services\HomeVistaa\backend\src\middleware\error.middleware.ts:13:27)
+    at Object.login (D:\Capritech Global Services\HomeVistaa\backend\src\services\auth.service.ts:40:22)
+    at login (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\auth.controller.ts:28:49)
+10:58:28 [[31merror[39m]: Error: Invalid email or password.
+    at createError (D:\Capritech Global Services\HomeVistaa\backend\src\middleware\error.middleware.ts:13:27)
+    at Object.login (D:\Capritech Global Services\HomeVistaa\backend\src\services\auth.service.ts:40:22)
+    at login (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\auth.controller.ts:28:49)
+11:13:09 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:25:20 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:25:20 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:25:33 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:25:33 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:25:48 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:25:48 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:34:46 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:40:48 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:47:37 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:47:37 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:48:23 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:48:23 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:48:36 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:48:37 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:48:54 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:48:54 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:54:12 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:09:53 [[31merror[39m]: PrismaClientInitializationError: Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+12:16:32 [[31merror[39m]: Error: Invalid verification code.
+    at createError (D:\Capritech Global Services\HomeVistaa\backend\src\middleware\error.middleware.ts:13:27)
+    at Object.verifyOtpAndLogin (D:\Capritech Global Services\HomeVistaa\backend\src\services\auth.service.ts:243:22)
+    at verifyOtp (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\auth.controller.ts:167:49)
+11:04:56 [[31merror[39m]: PrismaClientInitializationError: Can't reach database server at `127.0.0.1:5432`
+
+Please make sure your database server is running at `127.0.0.1:5432`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+11:30:48 [[31merror[39m]: PrismaClientInitializationError: Can't reach database server at `127.0.0.1:5432`
+
+Please make sure your database server is running at `127.0.0.1:5432`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+15:53:10 [[31merror[39m]: PrismaClientInitializationError: Can't reach database server at `127.0.0.1:5432`
+
+Please make sure your database server is running at `127.0.0.1:5432`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+18:07:53 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:11:25 [[31merror[39m]: TypeError: Do not know how to serialize a BigInt
+    at JSON.stringify (<anonymous>)
+    at stringify (D:\Capritech Global Services\HomeVistaa\backend\node_modules\express\lib\response.js:1160:12)
+    at ServerResponse.json (D:\Capritech Global Services\HomeVistaa\backend\node_modules\express\lib\response.js:271:14)
+    at sendSuccess (D:\Capritech Global Services\HomeVistaa\backend\src\utils\response.ts:14:33)
+    at sendCreated (D:\Capritech Global Services\HomeVistaa\backend\src\utils\response.ts:18:10)
+    at saveSearch (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\searchHistory.controller.ts:46:16)
+11:13:44 [[31merror[39m]: TypeError: Do not know how to serialize a BigInt
+    at JSON.stringify (<anonymous>)
+    at stringify (D:\Capritech Global Services\HomeVistaa\backend\node_modules\express\lib\response.js:1160:12)
+    at ServerResponse.json (D:\Capritech Global Services\HomeVistaa\backend\node_modules\express\lib\response.js:271:14)
+    at sendSuccess (D:\Capritech Global Services\HomeVistaa\backend\src\utils\response.ts:14:33)
+    at sendCreated (D:\Capritech Global Services\HomeVistaa\backend\src\utils\response.ts:18:10)
+    at saveSearch (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\searchHistory.controller.ts:46:16)
+11:15:46 [[31merror[39m]: TypeError: Do not know how to serialize a BigInt
+    at JSON.stringify (<anonymous>)
+    at stringify (D:\Capritech Global Services\HomeVistaa\backend\node_modules\express\lib\response.js:1160:12)
+    at ServerResponse.json (D:\Capritech Global Services\HomeVistaa\backend\node_modules\express\lib\response.js:271:14)
+    at sendSuccess (D:\Capritech Global Services\HomeVistaa\backend\src\utils\response.ts:14:33)
+    at sendCreated (D:\Capritech Global Services\HomeVistaa\backend\src\utils\response.ts:18:10)
+    at saveSearch (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\searchHistory.controller.ts:46:16)
+11:16:42 [[31merror[39m]: TypeError: Do not know how to serialize a BigInt
+    at JSON.stringify (<anonymous>)
+    at stringify (D:\Capritech Global Services\HomeVistaa\backend\node_modules\express\lib\response.js:1160:12)
+    at ServerResponse.json (D:\Capritech Global Services\HomeVistaa\backend\node_modules\express\lib\response.js:271:14)
+    at sendSuccess (D:\Capritech Global Services\HomeVistaa\backend\src\utils\response.ts:14:33)
+    at sendCreated (D:\Capritech Global Services\HomeVistaa\backend\src\utils\response.ts:18:10)
+    at saveSearch (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\searchHistory.controller.ts:46:16)
+11:17:15 [[31merror[39m]: TypeError: Do not know how to serialize a BigInt
+    at JSON.stringify (<anonymous>)
+    at stringify (D:\Capritech Global Services\HomeVistaa\backend\node_modules\express\lib\response.js:1160:12)
+    at ServerResponse.json (D:\Capritech Global Services\HomeVistaa\backend\node_modules\express\lib\response.js:271:14)
+    at sendSuccess (D:\Capritech Global Services\HomeVistaa\backend\src\utils\response.ts:14:33)
+    at sendCreated (D:\Capritech Global Services\HomeVistaa\backend\src\utils\response.ts:18:10)
+    at saveSearch (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\searchHistory.controller.ts:46:16)
+11:20:28 [[31merror[39m]: TypeError: Do not know how to serialize a BigInt
+    at JSON.stringify (<anonymous>)
+    at stringify (D:\Capritech Global Services\HomeVistaa\backend\node_modules\express\lib\response.js:1160:12)
+    at ServerResponse.json (D:\Capritech Global Services\HomeVistaa\backend\node_modules\express\lib\response.js:271:14)
+    at sendSuccess (D:\Capritech Global Services\HomeVistaa\backend\src\utils\response.ts:14:33)
+    at sendCreated (D:\Capritech Global Services\HomeVistaa\backend\src\utils\response.ts:18:10)
+    at saveSearch (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\searchHistory.controller.ts:46:16)
+18:37:25 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+10:25:30 [[31merror[39m]: PrismaClientInitializationError: Can't reach database server at `127.0.0.1:5432`
+
+Please make sure your database server is running at `127.0.0.1:5432`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+10:31:51 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+10:36:42 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+10:45:58 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+14:51:57 [[31merror[39m]: PrismaClientInitializationError: Can't reach database server at `127.0.0.1:5432`
+
+Please make sure your database server is running at `127.0.0.1:5432`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+10:57:05 [[31merror[39m]: PrismaClientInitializationError: Can't reach database server at `127.0.0.1:5432`
+
+Please make sure your database server is running at `127.0.0.1:5432`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+11:52:03 [[31merror[39m]: PrismaClientInitializationError: Can't reach database server at `127.0.0.1:5432`
+
+Please make sure your database server is running at `127.0.0.1:5432`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+12:05:37 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:32:09 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:32:31 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:46:10 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:46:10 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:46:10 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:46:22 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:46:22 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:46:22 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:46:49 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:46:49 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:46:49 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:47:04 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:47:04 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:47:04 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:47:16 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:01:55 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:01:55 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:01:55 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:02:23 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:02:23 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:02:23 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:02:42 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:02:42 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:02:42 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:03:59 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:03:59 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:03:59 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:04:13 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:30:59 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:34:55 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:35:18 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:43:24 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:45:25 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:49:05 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+14:04:40 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+14:06:20 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+14:06:28 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+14:06:37 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+16:50:52 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+16:51:08 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+17:28:08 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+17:28:19 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+17:28:34 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+17:28:54 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+17:29:26 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+17:59:01 [[31merror[39m]: PrismaClientValidationError: 
+Invalid `prisma.listing.create()` invocation in
+D:\Capritech Global Services\HomeVistaa\backend\src\repositories\listingDraft.repository.ts:104:40
+
+  101 }
+  102 
+  103 // Create Listing
+→ 104 const listing = await prisma.listing.create({
+        data: {
+          userId: "79b64558-1005-4d97-9451-3024c88c9062",
+          title: "3 BHK ",
+          type: "Shop",
+                ~~~~~~
+          listingType: "sell",
+          role: "owner",
+          price: 72n,
+          area: 655,
+          locality: "Sector 62",
+          city: "Noida",
+          address: "ytrepoiuytreoiuytrewqkjhgfdsaiuytrq",
+          zipcode: "230306",
+          beds: 1,
+          baths: 3,
+          possessionStatus: "under_construction",
+          possessionDate: "2026-07-16",
+          reraId: "7654322",
+          ownerName: "Owner",
+          ownerPhone: "",
+          status: "pending",
+          amenities: [
+            "Parking",
+            "Lift",
+            "CCTV",
+            "Gym",
+            "Children's Play Area",
+            "Balcony"
+          ],
+          media: {
+            images: [],
+            videos: [],
+            floorPlan: null,
+            virtualTourUrl: "iuytrdsakjhfdsa"
+          },
+          details: {
+            city: "Noida",
+            state: "Uttar Pradesh",
+            facing: "West",
+            images: [],
+            videos: [],
+            pincode: "230306",
+            bedrooms: "",
+            brochure: "",
+            locality: "Sector 62",
+            plotArea: "",
+            seoTitle: "",
+            amenities: [
+              "Parking",
+              "Lift",
+              "CCTV",
+              "Gym",
+              "Children's Play Area",
+              "Balcony"
+            ],
+            balconies: "1",
+            bathrooms: "3",
+            developer: "",
+            floorPlan: "",
+            landmarks: "ghgf",
+            openSides: "",
+            ownerName: "",
+            ownership: "",
+            roadWidth: "",
+            carParking: "",
+            carpetArea: "333",
+            furnishing: "Semi-Furnished",
+            highlights: [],
+            ownerPhone: "",
+            reraNumber: "7654322",
+            builtUpArea: "",
+            electricity: "",
+            floorNumber: "tyy",
+            projectName: "iuytrew",
+            propertyAge: "",
+            totalFloors: "878",
+            waterSupply: "",
+            buildingType: "commercial",
+            gatedSociety: false,
+            propertyType: "villa",
+            availableFrom: "2026-07-16",
+            bookingAmount: "4",
+            expectedPrice: "72",
+            propertyTitle: "3 BHK ",
+            cornerProperty: false,
+            listingPurpose: "sell",
+            seoDescription: "",
+            virtualTourUrl: "iuytrdsakjhfdsa",
+            completeAddress: "ytrepoiuytreoiuytrewqkjhgfdsaiuytrq",
+            priceNegotiable: true,
+            securityDeposit: "",
+            bhkConfiguration: "1",
+            possessionStatus: "Under Construction",
+            propertyCategory: "Shop",
+            superBuiltUpArea: "655",
+            locationAdvantages: "",
+            maintenanceCharges: "6",
+            propertyDescription: "This property is very goof "
+          },
+          seo: {
+            title: "",
+            description: ""
+          },
+          listingMedia: {
+            create: [
+              {
+                mediaType: "virtual_tour",
+                url: "iuytrdsakjhfdsa",
+                isPrimary: false
+              }
+            ]
+          },
+          listingDocuments: {
+            create: []
+          }
+        }
+      })
+
+Invalid value for argument `type`. Expected PropertyType.
+    at wn (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:29:1363)
+    at $n.handleRequestError (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:6958)
+    at $n.handleAndLogRequestError (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at l (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at Object.publishDraft (D:\Capritech Global Services\HomeVistaa\backend\src\repositories\listingDraft.repository.ts:104:19)
+    at publishDraft (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\listingDraft.controller.ts:34:21)
+17:59:12 [[31merror[39m]: PrismaClientValidationError: 
+Invalid `prisma.listing.create()` invocation in
+D:\Capritech Global Services\HomeVistaa\backend\src\repositories\listingDraft.repository.ts:104:40
+
+  101 }
+  102 
+  103 // Create Listing
+→ 104 const listing = await prisma.listing.create({
+        data: {
+          userId: "79b64558-1005-4d97-9451-3024c88c9062",
+          title: "3 BHK ",
+          type: "Shop",
+                ~~~~~~
+          listingType: "sell",
+          role: "owner",
+          price: 72n,
+          area: 655,
+          locality: "Sector 62",
+          city: "Noida",
+          address: "ytrepoiuytreoiuytrewqkjhgfdsaiuytrq",
+          zipcode: "230306",
+          beds: 1,
+          baths: 3,
+          possessionStatus: "under_construction",
+          possessionDate: "2026-07-16",
+          reraId: "7654322",
+          ownerName: "Owner",
+          ownerPhone: "",
+          status: "pending",
+          amenities: [
+            "Parking",
+            "Lift",
+            "CCTV",
+            "Gym",
+            "Children's Play Area",
+            "Balcony"
+          ],
+          media: {
+            images: [],
+            videos: [],
+            floorPlan: null,
+            virtualTourUrl: "iuytrdsakjhfdsa"
+          },
+          details: {
+            city: "Noida",
+            state: "Uttar Pradesh",
+            facing: "West",
+            images: [],
+            videos: [],
+            pincode: "230306",
+            bedrooms: "",
+            brochure: "",
+            locality: "Sector 62",
+            plotArea: "",
+            seoTitle: "",
+            amenities: [
+              "Parking",
+              "Lift",
+              "CCTV",
+              "Gym",
+              "Children's Play Area",
+              "Balcony"
+            ],
+            balconies: "1",
+            bathrooms: "3",
+            developer: "",
+            floorPlan: "",
+            landmarks: "ghgf",
+            openSides: "",
+            ownerName: "",
+            ownership: "",
+            roadWidth: "",
+            carParking: "",
+            carpetArea: "333",
+            furnishing: "Semi-Furnished",
+            highlights: [],
+            ownerPhone: "",
+            reraNumber: "7654322",
+            builtUpArea: "",
+            electricity: "",
+            floorNumber: "tyy",
+            projectName: "iuytrew",
+            propertyAge: "",
+            totalFloors: "878",
+            waterSupply: "",
+            buildingType: "commercial",
+            gatedSociety: false,
+            propertyType: "villa",
+            availableFrom: "2026-07-16",
+            bookingAmount: "4",
+            expectedPrice: "72",
+            propertyTitle: "3 BHK ",
+            cornerProperty: false,
+            listingPurpose: "sell",
+            seoDescription: "",
+            virtualTourUrl: "iuytrdsakjhfdsa",
+            completeAddress: "ytrepoiuytreoiuytrewqkjhgfdsaiuytrq",
+            priceNegotiable: true,
+            securityDeposit: "",
+            bhkConfiguration: "1",
+            possessionStatus: "Under Construction",
+            propertyCategory: "Shop",
+            superBuiltUpArea: "655",
+            locationAdvantages: "",
+            maintenanceCharges: "6",
+            propertyDescription: "This property is very goof "
+          },
+          seo: {
+            title: "",
+            description: ""
+          },
+          listingMedia: {
+            create: [
+              {
+                mediaType: "virtual_tour",
+                url: "iuytrdsakjhfdsa",
+                isPrimary: false
+              }
+            ]
+          },
+          listingDocuments: {
+            create: []
+          }
+        }
+      })
+
+Invalid value for argument `type`. Expected PropertyType.
+    at wn (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:29:1363)
+    at $n.handleRequestError (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:6958)
+    at $n.handleAndLogRequestError (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at l (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at Object.publishDraft (D:\Capritech Global Services\HomeVistaa\backend\src\repositories\listingDraft.repository.ts:104:19)
+    at publishDraft (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\listingDraft.controller.ts:34:21)
+17:59:17 [[31merror[39m]: PrismaClientValidationError: 
+Invalid `prisma.listing.create()` invocation in
+D:\Capritech Global Services\HomeVistaa\backend\src\repositories\listingDraft.repository.ts:104:40
+
+  101 }
+  102 
+  103 // Create Listing
+→ 104 const listing = await prisma.listing.create({
+        data: {
+          userId: "79b64558-1005-4d97-9451-3024c88c9062",
+          title: "3 BHK ",
+          type: "Shop",
+                ~~~~~~
+          listingType: "sell",
+          role: "owner",
+          price: 72n,
+          area: 655,
+          locality: "Sector 62",
+          city: "Noida",
+          address: "ytrepoiuytreoiuytrewqkjhgfdsaiuytrq",
+          zipcode: "230306",
+          beds: 1,
+          baths: 3,
+          possessionStatus: "under_construction",
+          possessionDate: "2026-07-16",
+          reraId: "7654322",
+          ownerName: "Owner",
+          ownerPhone: "",
+          status: "pending",
+          amenities: [
+            "Parking",
+            "Lift",
+            "CCTV",
+            "Gym",
+            "Children's Play Area",
+            "Balcony"
+          ],
+          media: {
+            images: [],
+            videos: [],
+            floorPlan: null,
+            virtualTourUrl: "iuytrdsakjhfdsa"
+          },
+          details: {
+            city: "Noida",
+            state: "Uttar Pradesh",
+            facing: "West",
+            images: [],
+            videos: [],
+            pincode: "230306",
+            bedrooms: "",
+            brochure: "",
+            locality: "Sector 62",
+            plotArea: "",
+            seoTitle: "",
+            amenities: [
+              "Parking",
+              "Lift",
+              "CCTV",
+              "Gym",
+              "Children's Play Area",
+              "Balcony"
+            ],
+            balconies: "1",
+            bathrooms: "3",
+            developer: "",
+            floorPlan: "",
+            landmarks: "ghgf",
+            openSides: "",
+            ownerName: "",
+            ownership: "",
+            roadWidth: "",
+            carParking: "",
+            carpetArea: "333",
+            furnishing: "Semi-Furnished",
+            highlights: [],
+            ownerPhone: "",
+            reraNumber: "7654322",
+            builtUpArea: "",
+            electricity: "",
+            floorNumber: "tyy",
+            projectName: "iuytrew",
+            propertyAge: "",
+            totalFloors: "878",
+            waterSupply: "",
+            buildingType: "commercial",
+            gatedSociety: false,
+            propertyType: "villa",
+            availableFrom: "2026-07-16",
+            bookingAmount: "4",
+            expectedPrice: "72",
+            propertyTitle: "3 BHK ",
+            cornerProperty: false,
+            listingPurpose: "sell",
+            seoDescription: "",
+            virtualTourUrl: "iuytrdsakjhfdsa",
+            completeAddress: "ytrepoiuytreoiuytrewqkjhgfdsaiuytrq",
+            priceNegotiable: true,
+            securityDeposit: "",
+            bhkConfiguration: "1",
+            possessionStatus: "Under Construction",
+            propertyCategory: "Shop",
+            superBuiltUpArea: "655",
+            locationAdvantages: "",
+            maintenanceCharges: "6",
+            propertyDescription: "This property is very goof "
+          },
+          seo: {
+            title: "",
+            description: ""
+          },
+          listingMedia: {
+            create: [
+              {
+                mediaType: "virtual_tour",
+                url: "iuytrdsakjhfdsa",
+                isPrimary: false
+              }
+            ]
+          },
+          listingDocuments: {
+            create: []
+          }
+        }
+      })
+
+Invalid value for argument `type`. Expected PropertyType.
+    at wn (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:29:1363)
+    at $n.handleRequestError (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:6958)
+    at $n.handleAndLogRequestError (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at l (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at Object.publishDraft (D:\Capritech Global Services\HomeVistaa\backend\src\repositories\listingDraft.repository.ts:104:19)
+    at publishDraft (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\listingDraft.controller.ts:34:21)
+17:59:56 [[31merror[39m]: PrismaClientValidationError: 
+Invalid `prisma.listing.create()` invocation in
+D:\Capritech Global Services\HomeVistaa\backend\src\repositories\listingDraft.repository.ts:104:40
+
+  101 }
+  102 
+  103 // Create Listing
+→ 104 const listing = await prisma.listing.create({
+        data: {
+          userId: "79b64558-1005-4d97-9451-3024c88c9062",
+          title: "3 BHK ",
+          type: "Shop",
+                ~~~~~~
+          listingType: "sell",
+          role: "owner",
+          price: 72n,
+          area: 655,
+          locality: "Sector 62",
+          city: "Noida",
+          address: "ytrepoiuytreoiuytrewqkjhgfdsaiuytrq",
+          zipcode: "230306",
+          beds: 1,
+          baths: 3,
+          possessionStatus: "under_construction",
+          possessionDate: "2026-07-16",
+          reraId: "7654322",
+          ownerName: "Owner",
+          ownerPhone: "",
+          status: "pending",
+          amenities: [
+            "Parking",
+            "Lift",
+            "CCTV",
+            "Gym",
+            "Children's Play Area",
+            "Balcony"
+          ],
+          media: {
+            images: [],
+            videos: [],
+            floorPlan: null,
+            virtualTourUrl: "iuytrdsakjhfdsa"
+          },
+          details: {
+            city: "Noida",
+            state: "Uttar Pradesh",
+            facing: "West",
+            images: [],
+            videos: [],
+            pincode: "230306",
+            bedrooms: "",
+            brochure: "",
+            locality: "Sector 62",
+            plotArea: "",
+            seoTitle: "",
+            amenities: [
+              "Parking",
+              "Lift",
+              "CCTV",
+              "Gym",
+              "Children's Play Area",
+              "Balcony"
+            ],
+            balconies: "1",
+            bathrooms: "3",
+            developer: "",
+            floorPlan: "",
+            landmarks: "ghgf",
+            openSides: "",
+            ownerName: "",
+            ownership: "",
+            roadWidth: "",
+            carParking: "",
+            carpetArea: "333",
+            furnishing: "Semi-Furnished",
+            highlights: [],
+            ownerPhone: "",
+            reraNumber: "7654322",
+            builtUpArea: "",
+            electricity: "",
+            floorNumber: "tyy",
+            projectName: "iuytrew",
+            propertyAge: "",
+            totalFloors: "878",
+            waterSupply: "",
+            buildingType: "commercial",
+            gatedSociety: false,
+            propertyType: "villa",
+            availableFrom: "2026-07-16",
+            bookingAmount: "4",
+            expectedPrice: "72",
+            propertyTitle: "3 BHK ",
+            cornerProperty: false,
+            listingPurpose: "sell",
+            seoDescription: "",
+            virtualTourUrl: "iuytrdsakjhfdsa",
+            completeAddress: "ytrepoiuytreoiuytrewqkjhgfdsaiuytrq",
+            priceNegotiable: true,
+            securityDeposit: "",
+            bhkConfiguration: "1",
+            possessionStatus: "Under Construction",
+            propertyCategory: "Shop",
+            superBuiltUpArea: "655",
+            locationAdvantages: "",
+            maintenanceCharges: "6",
+            propertyDescription: "This property is very goof "
+          },
+          seo: {
+            title: "",
+            description: ""
+          },
+          listingMedia: {
+            create: [
+              {
+                mediaType: "virtual_tour",
+                url: "iuytrdsakjhfdsa",
+                isPrimary: false
+              }
+            ]
+          },
+          listingDocuments: {
+            create: []
+          }
+        }
+      })
+
+Invalid value for argument `type`. Expected PropertyType.
+    at wn (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:29:1363)
+    at $n.handleRequestError (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:6958)
+    at $n.handleAndLogRequestError (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:6623)
+    at $n.request (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:121:6307)
+    at l (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:130:9633)
+    at Object.publishDraft (D:\Capritech Global Services\HomeVistaa\backend\src\repositories\listingDraft.repository.ts:104:19)
+    at publishDraft (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\listingDraft.controller.ts:34:21)
+10:45:08 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:54:52 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:39:49 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:05:58 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:08:58 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:25:34 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:57:50 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+10:56:01 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:02:46 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:20:13 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:33:52 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:23:33 [[31merror[39m]: PrismaClientInitializationError: Can't reach database server at `127.0.0.1:5432`
+
+Please make sure your database server is running at `127.0.0.1:5432`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+12:28:07 [[31merror[39m]: Error: Invalid verification code.
+    at createError (D:\Capritech Global Services\HomeVistaa\backend\src\middleware\error.middleware.ts:13:27)
+    at Object.verifyOtpAndLogin (D:\Capritech Global Services\HomeVistaa\backend\src\services\auth.service.ts:243:22)
+    at verifyOtp (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\auth.controller.ts:194:49)
+16:43:59 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:25:35 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:32:51 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:48:52 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:00:03 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+14:25:57 [[31merror[39m]: PrismaClientInitializationError: Can't reach database server at `127.0.0.1:5432`
+
+Please make sure your database server is running at `127.0.0.1:5432`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+15:17:06 [[31merror[39m]: Error: Invalid verification code.
+    at createError (D:\Capritech Global Services\HomeVistaa\backend\src\middleware\error.middleware.ts:13:27)
+    at Object.verifyOtpAndLogin (D:\Capritech Global Services\HomeVistaa\backend\src\services\auth.service.ts:243:22)
+    at verifyOtp (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\auth.controller.ts:194:49)
+15:18:24 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:07:07 [[31merror[39m]: PrismaClientInitializationError: Can't reach database server at `127.0.0.1:5432`
+
+Please make sure your database server is running at `127.0.0.1:5432`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+11:12:31 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:30:16 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+13:42:43 [[31merror[39m]: Error: Invalid verification code.
+    at createError (D:\Capritech Global Services\HomeVistaa\backend\src\middleware\error.middleware.ts:13:27)
+    at Object.verifyOtpAndLogin (D:\Capritech Global Services\HomeVistaa\backend\src\services\auth.service.ts:243:22)
+    at verifyOtp (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\auth.controller.ts:194:49)
+13:43:01 [[31merror[39m]: Error: Invalid verification code.
+    at createError (D:\Capritech Global Services\HomeVistaa\backend\src\middleware\error.middleware.ts:13:27)
+    at Object.verifyOtpAndLogin (D:\Capritech Global Services\HomeVistaa\backend\src\services\auth.service.ts:243:22)
+    at verifyOtp (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\auth.controller.ts:194:49)
+19:01:06 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:07:03 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:12:29 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:15:11 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:18:49 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+12:27:22 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+16:22:40 [[31merror[39m]: Error: Invalid email address or password.
+    at createError (D:\Capritech Global Services\HomeVistaa\backend\src\middleware\error.middleware.ts:13:27)
+    at Object.login (D:\Capritech Global Services\HomeVistaa\backend\src\services\auth.service.ts:83:22)
+    at async login (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\auth.controller.ts:32:49)
+17:45:37 [[31merror[39m]: Error: An account with this email address already exists.
+    at createError (D:\Capritech Global Services\HomeVistaa\backend\src\middleware\error.middleware.ts:13:27)
+    at Object.register (D:\Capritech Global Services\HomeVistaa\backend\src\services\auth.service.ts:21:22)
+    at async register (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\auth.controller.ts:20:49)
+17:45:47 [[31merror[39m]: Error: An account with this email address already exists.
+    at createError (D:\Capritech Global Services\HomeVistaa\backend\src\middleware\error.middleware.ts:13:27)
+    at Object.register (D:\Capritech Global Services\HomeVistaa\backend\src\services\auth.service.ts:21:22)
+    at async register (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\auth.controller.ts:20:49)
+18:36:11 [[31merror[39m]: Error: Invalid email address or password.
+    at createError (D:\Capritech Global Services\HomeVistaa\backend\src\middleware\error.middleware.ts:13:27)
+    at Object.login (D:\Capritech Global Services\HomeVistaa\backend\src\services\auth.service.ts:83:22)
+    at async login (D:\Capritech Global Services\HomeVistaa\backend\src\controllers\auth.controller.ts:32:49)
+10:28:38 [[31merror[39m]: PrismaClientInitializationError: Can't reach database server at `127.0.0.1:5432`
+
+Please make sure your database server is running at `127.0.0.1:5432`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at async connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at async start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+11:01:03 [[31merror[39m]: PrismaClientInitializationError: Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+    at t (D:\Capritech Global Services\HomeVistaa\backend\node_modules\@prisma\client\runtime\library.js:112:2488)
+    at async connectDatabase (D:\Capritech Global Services\HomeVistaa\backend\src\config\database.ts:27:3)
+    at async start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:12:5)
+11:10:24 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
+11:18:41 [[31merror[39m]: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at start (D:\Capritech Global Services\HomeVistaa\backend\src\server.ts:15:12)
